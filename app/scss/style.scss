@@ -1,43 +1,176 @@
-@import 'vars';
-@import 'fonts';
-@import 'reset';
-@import 'libs';
-@import 'global';
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
 
 .header {
-	&__inner {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		height: 120px;
-	}
-	&__btn {
-		background-color: transparent;
-		border: none;
-		padding: 0;
-		cursor: pointer;
-	}
-
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+  }
+  &__btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
 }
 
 .logo {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 .menu {
-	padding-right: 15px;
-	&__list {
-		display: flex;
-	}
-	&__list-item {
-		padding-left: 35px;
-		padding-right: 45px;
-	}
-	&__list-link {
-		@extend %title-font;
-		line-height: 22px;
-		color: rgba(54, 56, 56, 0.9);
-
-	}
+  padding-right: 15px;
+  &__list {
+    display: flex;
+  }
+  &__list-item {
+    padding-left: 35px;
+    padding-right: 45px;
+  }
+  &__list-link {
+    @extend %title-font;
+    line-height: 22px;
+    color: rgba(54, 56, 56, 0.9);
+  }
 }
 
+.footer {
+  &__content {
+    padding: 62px 0 80px;
+    background-color: $footer;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__info {
+    width: 539px;
+  }
+  &__info-title {
+    color: $title;
+    @extend %title-font;
+    line-height: 23px;
+    margin-bottom: 14px;
+  }
+  &__info-text {
+    margin-bottom: 16px;
+    // padding-right: 63px;
+	max-width: 476px;
+  }
+  &__info-email {
+	font-weight: 600;
+	font-size: 14px;
+	color: $title;
+	margin-bottom: 22px;//не работает-ссылка строчный елемент делаем инлайн блок
+	display: inline-block;
+	padding-left: 30px;
+	position: relative;//вставляем иконку
+	&::before {
+		content: '';
+		position: absolute;
+		background-image: url(../images/footer_icons/envelope.svg);
+		left: 0;
+		top: 5px;
+		width: 20px;//размеры обязательны
+		height: 20px;
+	}
+  }
+  &__form {
+	display: flex;
+  }
+  &__form-input {
+	padding: 6px 10px 6px 18px;
+	width: 100%;
+	background-color: transparent;
+	// opacity: 0.7; не пишем чтобы вводимый текст не был форматирован
+	border: 1px solid rgba(#383636, .7);
+	border-radius: 21px;
+	margin-right: 9px;
+	outline-style: none;
+	&::placeholder {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 27px;
+		color: #A1A1A1;
+
+	}
+  }
+  &__form-button {
+	color: #FFFFF0;
+	background-color: $title;
+	border-radius: 21px;
+	font-weight: 600;
+	padding: 6px 12px;
+	min-width: 160px;//width 160px
+	border: none;
+	cursor: pointer;
+  }
+  &__social {
+	margin-right: auto;
+	margin-left: 100px;
+	width: 125px;
+  }
+  &__social-link {
+	padding-left: 28px;
+	position: relative;
+	&::before{
+		content: '';
+		position: absolute;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		top: 3px;
+	}
+  }
+  &__social-link--facebook::before{
+	background-image: url(../images/footer_icons/facebook.svg);
+  }
+  &__social-link--instagram::before{
+	 	background-image: url(../images/footer_icons/instagram.svg);
+		width: 14px;
+		height: 14px;
+		top: 4px;
+  }
+  &__social-link--pinterest::before{
+	background-image: url(../images/footer_icons/pinterest.svg);
+  }
+  &__social-link--whatsapp::before{
+	background-image: url(../images/footer_icons/whatsapp.svg);
+	width: 14px;
+	height: 14px;
+	// top: 4px;
+  }
+  &__social-link--youtube::before{
+	background-image: url(../images/footer_icons/youtube.svg);
+	width: 18px;
+	height: 12px;
+	top: 4px;
+  }
+  &__social-item,
+  &__menu-item {
+	  margin-bottom: 15px;
+	  font-weight: 600;
+	  font-size: 14px;
+  }
+  &__menu {
+	width: 125px;
+	margin-right: 60px;
+  }
+  &__menu-link,
+  &__social-link {
+	color: #707070;
+  }
+  &__copyright {
+    background-color: $title;
+    color: #a1a1a1;
+    text-align: center;
+    height: 110px;
+    padding: 42px 0px 41px;
+  }
+}
