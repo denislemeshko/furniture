@@ -291,5 +291,248 @@
 	&__slider-text {
 		max-width: 585px;
 	}
+}
+
+//section new-collection start
+
+.new-collection {
+	text-align: center;
+	padding: 46px 0 104px;
+	&__title {
+		color: $title;
+		@extend %title-font;
+		font-size: 36px;
+		line-height: 51px;
+		padding-bottom: 25px;
+		margin-bottom: 25px;//место под горизонтальную черту
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			width: 252px;
+			bottom: 0;
+			margin: 0 auto;//выравниваем по центру и
+			left: 0;//и растягиваем
+			right: 0;//и растягиваем
+			background-color: #6D7278;
+			border: 1px solid #979797;
+		}
+	}
+	&__text {
+		max-width: 730px;
+		margin: 0 auto 50px;// при указании ширины ставим по центру
+	}
+}
+
+//section new-collection end
+
+//section collection start
+
+.collection {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 29.5px;
+	&__item {
+		position: relative;
+
+		&:hover {
+			.collection__info{
+				opacity: 1;
+			}
+		}
+	}
+	&__images {
+		min-height: 350px;
+		object-fit: cover;
+	}
+	&__info {
+		opacity: 0;//изчез без наведения
+		transition: all 0.6s;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(#fff, .7);
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;//выравниваем по горизонтали
+		justify-content: center;//выравниваем по вертикали
+	}
+	&__info-title {
+		color: $title;
+		@extend %title-font;
+		font-size: 20px;
+		line-height: 24px;
+		text-align: center;
+		padding-bottom: 19px;
+		margin-bottom: 19px;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			width: 80%;
+			bottom: 0;
+			margin: 0 auto;//выравниваем по центру и
+			left: 0;//и растягиваем
+			right: 0;//и растягиваем
+			background-color: #6D7278;
+			border: 1px solid #979797;
+		}
+	}
+	&__info-text {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 28px;
+		color: #707070;
+	}
+}
+
+//section collection end
+
+//section decor start
+.decor {
+	padding: 172px 0 156px;
+	background-image: url(../images/decor-bg-w.jpg);
+	background-repeat: no-repeat;
+	//background-position: center;
+	background-size: cover;
+	min-height: 600px;
+	margin-bottom: 79px;
+
+	&__title {
+		color: $title;
+		@extend %title-font;
+		font-size: 60px;
+		line-height: 80px;
+		max-width: 515px;
+		padding-bottom: 22px;
+		margin-bottom: 21px;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			width: 200px;
+			bottom: 0;
+			left: 0;
+			// margin: 0 auto;//выравниваем по центру и
+			// left: 0;//и растягиваем
+			// right: 0;//и растягиваем
+			background-color: #6D7278;
+			border: 1px solid #979797;
+		}
+	}
+	&__text {
+		max-width: 515px;
+	}
+}
+//section decor end
+
+//section works-path start
+
+.works-path {
+	padding-bottom: 30px;
+	&__title {
+		text-align: center;
+		color: $title;
+		@extend %title-font;
+		font-size: 36px;
+		line-height: 51px;
+		margin-bottom: 39px;
+	}
+	&__items-box {
+		display: flex;
+		align-items: flex-end;//выравниваем второй блок по вертикали
+		border-bottom: 2px solid rgba($title, .7);
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: -5px;
+			width: 10px;
+			height: 10px;
+			background-color: $title;
+			border-radius: 50%;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			right: 0;
+			bottom: -5px;
+			width: 10px;
+			height: 10px;
+			background-color: $title;
+			border-radius: 50%;
+		}
+	}
+	&__item {
+		width: 260px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		position: relative;
+		height: 100%;
+	}
+	&__item--production {
+		margin-left: 317px;
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0px;
+			width: 2px;
+			height: 20px;
+			background-color: rgba($title, .7);
+		}
+	}
+	&__item--production,
+	&__item--consultation {
+		padding-bottom: 38px;
+	}
+	&__items-box-bottom {
+		display: flex;
+		align-items: flex-start;//выравниваем второй блок по вертикали
+		position: relative;
+	}
+	&__item--measurements,
+	&__item--delivery{
+		padding-top: 38px;
+		width: 260px;
+	}
+	&__item--measurements {
+		margin-left: 306px;
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top:0;
+			width: 2px;
+			height: 20px;
+			background-color: rgba($title, .7);
+		}
+	}
+	&__item--delivery {
+		margin-left: 275px;
+
+	}
+
+	&__item-title {
+		margin-left: 13px;
+		color: $title;
+		@extend %title-font;
+		font-size: 16px;
+		line-height: 23px;
+	}
+	&__item-text {
+		margin-top: 13px;
+	}
+	&__item-img {
+		// margin-bottom: 13px;
+	}
 
 }
+
+//section works-path end
+
