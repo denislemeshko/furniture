@@ -7,3 +7,13 @@ $footer: #DFDFDF;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 }
+
+//fancybox error improvement
+
+@function max($numbers...){
+	@return m#{a}x(#{$numbers});
+}
+@function min($numbers...){
+	@return m#{i}n(#{$numbers});
+}
+// snippet end
