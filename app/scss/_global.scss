@@ -60,6 +60,25 @@ body {
 	}
 }
 
+.info-email {
+    font-weight: 600;
+    font-size: 14px;
+    color: $title;
+    margin-bottom: 22px; //не работает-ссылка строчный елемент делаем инлайн блок
+    display: inline-block;
+    padding-left: 30px;
+    position: relative; //вставляем иконку
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url(../images/footer_icons/envelope.svg);
+      left: 0;
+      top: 5px;
+      width: 20px; //размеры обязательны
+      height: 20px;
+    }
+  }
+
 
 
 
