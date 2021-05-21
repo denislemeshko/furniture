@@ -13,7 +13,7 @@ $(function () {
 		dots: true,
 		arrows: false,
 		fade: true,
-		autoplay: true
+		autoplay: true,
 	});
 // второй слайдер
 
@@ -21,9 +21,14 @@ $(function () {
 		slidesToShow: 10,
 		slidesToScroll: 10,
 		dots: true,
-		arrows: false
+		arrows: false,
 	});
-//
+//третий слайдер
+	$('.article-slider__box').slick({
+		prevArrow: '<button type="button" class="article-slider__arrow article-slider__arrowleft"><img src="images/arrow-slide-left.svg" alt="img"></button>',
+		nextArrow: '<button type="button" class="article-slider__arrow article-slider__arrowright"><img src="images/arrow-slide-right.svg" alt="img"></button>',
+		
+	});
 
 	let mixer = mixitup('.gallery__inner');
 
