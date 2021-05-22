@@ -17,6 +17,9 @@
     padding: 0;
     cursor: pointer;
   }
+  &__btn-menu{
+	  display: none;
+  }
 }
 // HEADER END
 
@@ -232,11 +235,16 @@
 	z-index: 10;
 	&__list {
 		display: flex;
+		overflow-x: auto;
+	}
+	&__item{
+		position: relative;
+		padding-right: 8px;
 	}
 	&__item::after {
 		content: '/';
-		margin-left: -4px;
-		margin-right: 4px;
+
+		position: absolute;
 	}
 	&__item:last-child::after{
 		display: none;
@@ -408,7 +416,7 @@
   background-repeat: no-repeat;
   //background-position: center;
   background-size: cover;
-  min-height: 600px;
+//   min-height: 600px;
   margin-bottom: 79px;
 
   &__title {
@@ -1376,7 +1384,9 @@
 			padding: 6px 60px;
 			border: none;
 			cursor: pointer;
-
 		}
-
 }
+
+@import 'media';
+
+
